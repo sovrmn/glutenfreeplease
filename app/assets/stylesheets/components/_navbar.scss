@@ -10,3 +10,16 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar-logo-logotitle {
+  display:flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+#logotitle {
+  color: black;
+  font-size: 24px;
+  margin: 2px;
+}
