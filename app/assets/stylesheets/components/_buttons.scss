@@ -1,0 +1,21 @@
+.pink-button {
+  background-color: $warm-pink;
+  color: white;
+  opacity:0.95;
+  cursor: pointer;
+  border-radius: 15px;
+  text-align:center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+  padding: 1rem 1.25rem;
+  border: 1px solid transparent;
+  font-size: 32px;
+
+
+  &:hover {
+    color: white;
+    background-color: $dark-warm-pink;
+    text-decoration: none;
+    opacity: 1;
+  }
+}
