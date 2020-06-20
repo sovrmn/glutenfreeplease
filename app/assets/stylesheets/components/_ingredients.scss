@@ -1,0 +1,37 @@
+.ingredient-main {
+  width: 100%;
+}
+
+.image-main {
+  height: 50vh;
+  width: 100%;
+  object-fit: cover;
+  margin: 0px;
+}
+
+.ingredients-title {
+  color: black;
+  font-family: 'Noto Serif', serif;
+  font-size: 56px;
+  padding-top: 32px;
+  text-align: center;
+  padding-top: 110px;
+}
+
+.ingredients-subtitle{
+  color: black;
+  font-family: 'Noto Serif', serif;
+  font-size: 32px;
+  font-style: italic;
+  text-align: center;
+}
+
+.ingredients{
+  color: black;
+  font-size: 16px;
+    &:hover {
+    font-style: bold;
+    text-decoration: none;
+    color: $warm-pink;
+  }
+}

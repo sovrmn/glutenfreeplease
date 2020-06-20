@@ -1,0 +1,35 @@
+<div class=image-main  style="background-image:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)), url(https://cdn.dribbble.com/users/2536875/screenshots/12017195/media/cdbaa929738cc6183c1a2c0ef7057539.jpeg);">
+  <div class="ingredients-title ">Petit index des produits sans gluten</div>
+  <div class="ingredients-subtitle">" Que ton aliment soit ta première médecine"</div>
+</div>
+
+
+<div class="container-recipe">
+  <ul>
+    <% ingredient_list = @ingredients.sort_by {|ingredient| ingredient.name}%>
+    <% ingredient_list.each do |ingredient| %>
+      <li><%= link_to ingredient.name.capitalize, ingredient_path(ingredient), class: 'ingredients' %>
+        <% if policy(ingredient).edit?%>
+          <%= link_to edit_ingredient_path(ingredient) do%>
+          <i id="ingredient-list-icon" class="fas fa-edit"></i>
+          <% end %>
+        <% end %>
+        <% if policy(ingredient).destroy?%>
+          <%= link_to ingredient_path(ingredient), method: :delete, data: { confirm: "Are you sure?" } do %>
+          <i id="ingredient-list-icon" class="fa fa-trash destroy_dose"></i>
+          <% end %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+
+  <p>
+    <%=link_to new_ingredient_path do %>
+    <span class="add-recipe">
+      <i class="fas fa-plus mr-1">
+      </i>
+      Ajoutez un ingrédient
+    </span>
+    <% end %>
+  </p>
+</div>
