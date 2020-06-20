@@ -6,6 +6,8 @@
     <%= csp_meta_tag %>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <%= favicon_link_tag asset_path('cookie.png'), :rel => 'icon', :type =>  'image/png' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
@@ -16,5 +18,7 @@
     <%= render 'shared/flashes' %>
 
     <%= yield %>
+
+    <%= render 'shared/footer' %>
   </body>
 </html>
