@@ -1,0 +1,24 @@
+<div class=image-main-recipes  style="background-image:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)), url(https://cdn.dribbble.com/users/4712379/screenshots/12064153/media/9a3dc130366a2cb0784900f3a916467c.png);">
+</div>
+
+<div class="title-grid">
+  <h2 class="index-title">Découvrez nos recettes gourmandes</h2>
+</div>
+
+<div class="container-recipe">
+  <div class="cards-grid">
+    <% @recipes.each do |recipe|%>
+      <div class ="card" <% if recipe.photo.attached? %> style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path recipe.photo.key, crop: :fill %>')" <% end %>>
+        <div class="card-title">
+          <%= link_to recipe.name.capitalize, recipe_path(recipe), class: 'card-title' %>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="card-container">
+      <div class="round-card" style="background-image:linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(https://i.pinimg.com/474x/80/46/1a/80461a2037fae3da6c425c821c4eec3e.jpg);">
+        <%= link_to "+ votre recette", new_recipe_path, class: 'card-title-add' %>
+      </div>
+    </div>
+  </div>
+</div>
