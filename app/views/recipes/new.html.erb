@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h1 class="my-4">Créez une nouvelle recette</h1>
+
+      <%= simple_form_for @recipe do |f| %>
+        <%= f.input :name %>
+        <%= f.input :description %>
+        <div class="button-container">
+          <%= f.button :submit, class: 'pink-button' %>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>
