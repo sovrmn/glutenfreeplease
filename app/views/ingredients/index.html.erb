@@ -8,17 +8,7 @@
   <ul>
     <% ingredient_list = @ingredients.sort_by {|ingredient| ingredient.name}%>
     <% ingredient_list.each do |ingredient| %>
-      <li><%= link_to ingredient.name.capitalize, ingredient_path(ingredient), class: 'ingredients' %>
-        <% if policy(ingredient).edit?%>
-          <%= link_to edit_ingredient_path(ingredient) do%>
-          <i id="ingredient-list-icon" class="fas fa-edit"></i>
-          <% end %>
-        <% end %>
-        <% if policy(ingredient).destroy?%>
-          <%= link_to ingredient_path(ingredient), method: :delete, data: { confirm: "Are you sure?" } do %>
-          <i id="ingredient-list-icon" class="fa fa-trash destroy_dose"></i>
-          <% end %>
-        <% end %>
+      <li><%= ingredient.name.capitalize %>
       </li>
     <% end %>
   </ul>

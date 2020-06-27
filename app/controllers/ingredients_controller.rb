@@ -5,6 +5,7 @@ class IngredientsController < ApplicationController
   end
 
   def show
+    @ingredient = Ingredient.find(params[:id])
   end
 
   def new
@@ -12,11 +13,12 @@ class IngredientsController < ApplicationController
   end
 
   def create
-    @ingredient = Ingredient.new(ingredient_params)
+    @ingredient = Ingredient.new(ingredient_params.merge(user:current_user))
     if @ingredient.save
-      redirect_to ingredient_path(@ingredient)
+      redirect_to ingredients_path
     else
       render 'new'
+      flash[:notice] = "The creation could not be completed."
     end
   end
 
