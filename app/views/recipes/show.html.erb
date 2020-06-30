@@ -4,10 +4,21 @@
       <div class="recipe-title">
         <%= @recipe.name.capitalize %>
       </div>
+      <div class="edit-delete">
+        <%= link_to edit_recipe_path(@recipe) do%>
+          <i id="show-icon" class="fas fa-edit"></i>
+        <% end %>
+        <%= link_to recipe_path(@recipe), method: :delete, data: { confirm: "Are you sure?" } do %>
+          <i id="show-icon" class="fa fa-trash destroy_dose"></i>
+        <% end %>
+      </div>
     </div>
 
     <div class="recipe-grid">
       <div>
+        <% if @recipe.photo.attached? %>
+        <%= cl_image_tag @recipe.photo.key, height: 380, crop: :fill, class:"recipe-image-show" %>
+      <% end %>
       </div>
       <div>
         <h3>Ingrédients</h3>
