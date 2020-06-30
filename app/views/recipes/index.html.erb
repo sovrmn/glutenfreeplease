@@ -8,7 +8,7 @@
 <div class="container-recipe">
   <div class="cards-grid">
     <% @recipes.each do |recipe|%>
-      <div class ="card" <% if recipe.photo.attached? %> style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path recipe.photo.key, crop: :fill %>')" <% end %>>
+      <div class ="card" <% if recipe.photo.attached? %> style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path recipe.photo.key %>')" <% end %>>
         <div class="card-title">
           <%= link_to recipe.name.capitalize, recipe_path(recipe), class: 'card-title' %>
         </div>

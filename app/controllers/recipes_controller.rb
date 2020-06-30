@@ -29,7 +29,7 @@ class RecipesController < ApplicationController
   def update
     @recipe = Recipe.find(params[:id])
     @recipe.user = current_user
-    @recipe.update(island_params)
+    @recipe.update(recipe_params)
     if @recipe.save
       redirect_to recipe_path(@recipe)
     else
