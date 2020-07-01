@@ -17,7 +17,7 @@
     <div class="recipe-grid">
       <div>
         <% if @recipe.photo.attached? %>
-        <%= cl_image_tag @recipe.photo.key, height: 380, crop: :fill, class:"recipe-image-show" %>
+        <%= cl_image_tag @recipe.photo.key %>
       <% end %>
       </div>
       <div>
