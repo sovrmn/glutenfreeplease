@@ -79,20 +79,20 @@
   text-align: center;
   text-shadow: 0.3px 0.3px black;
   &:hover {
-      color: white;
-      opacity: 1;
+    color: $dark-warm-pink;
+    opacity: 1;
   }
 }
 
 .card-title-add{
   color: black;
-  font-size: 24px;
+  font-size: 20px;
   margin-bottom: 150px;
   text-align: center;
   text-shadow: 0.3px 0.3px white;
   &:hover {
-      color: black;
-      opacity: 1;
+    color: $dark-warm-pink;
+    opacity: 1;
   }
 }
 

@@ -32,7 +32,7 @@
   background: rgba(0,0,0,0.8);
   border-radius: 8px;
   color: white;
-  width: 400px;
+  width: 450px;
   i {
     width: 40px;
   }
@@ -52,16 +52,23 @@
 .ingredient-title {
   font-size: 24px;
   margin-top: 24px;
+  margin-bottom: px;
+}
+
+a:hover{
+  text-decoration: none;
 }
 
 .add-recipe {
   color: $warm-pink;
-  &:hover {
-    color: $dark-warm-pink;
-    font-style: bold;
-    text-decoration: none !important;
-  }
 }
+
+.add-recipe:hover{
+  color: $dark-warm-pink;
+  font-style: bold;
+
+}
+
 
 #show-icon {
   color: white;
