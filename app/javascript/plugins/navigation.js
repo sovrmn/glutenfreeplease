@@ -16,14 +16,8 @@ const navigation = () => {
           event.currentTarget.classList.add('active');
         }
       });
-  });
-//   $( '.navbar-dark .navbar-nav a' ).on( 'click', function () {
+  };
 
-//     $( '.navbar-dark .navbar-nav' ).find( 'li.active' ).removeClass( 'active' );
-//     $( this ).parent( 'li' ).addClass( 'active' );
-//     console.log(document.querySelector(".active"));
-//   });
-// };
 
 
 export {navigation};
