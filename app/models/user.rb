@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :recipes
   has_many :doses
   has_many :ingredients
+  has_many :reviews
 end
