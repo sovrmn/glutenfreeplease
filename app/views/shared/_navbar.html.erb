@@ -26,7 +26,7 @@
           <%=link_to "Produits", ingredients_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <div class="nav-link"><%= current_user.email%></div>
+          <div class="nav-link">Hello <%= current_user.username%>!</div>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://i.pinimg.com/564x/f4/e3/f3/f4e3f349769e8d7d212caaa42dda64d1.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
