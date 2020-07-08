@@ -5,6 +5,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    @average = @recipe.reviews.map(&:rating).sum / @recipe.reviews.count.to_f
   end
 
   def new
@@ -16,7 +17,7 @@ class RecipesController < ApplicationController
     @recipe.user = current_user
     if @recipe.save
       redirect_to recipe_path(@recipe)
-    else
+    else exit
       render 'new'
       flash[:notice] = "The creation could not be completed."
     end

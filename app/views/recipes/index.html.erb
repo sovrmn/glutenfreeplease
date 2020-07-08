@@ -8,15 +8,17 @@
 <div class="container-recipe">
   <div class="cards-grid">
     <% @recipes.each do |recipe|%>
-      <% if recipe.photo.attached? %>
-      <div class ="card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path recipe.photo.key %>')">
-      <% else %>
-      <div class ="card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1515192088926-be05d2dded88?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1652&q=80')">
-      <% end %>
-        <div class="card-title">
-          <%= link_to recipe.name.capitalize, recipe_path(recipe), class: 'card-title' %>
+      <%= link_to recipe_path(recipe) do %>
+        <% if recipe.photo.attached? %>
+        <div class ="card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path recipe.photo.key %>')">
+        <% else %>
+        <div class ="card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1515192088926-be05d2dded88?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1652&q=80')">
+        <% end %>
+          <div class="card-title">
+            <%=recipe.name.capitalize%>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
 
     <div class="card-container">

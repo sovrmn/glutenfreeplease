@@ -19,6 +19,18 @@
             <% end %>
         </div>
       </div>
+      <div class='mt-2'>
+        <% if @recipe.reviews.empty? %>
+          <% else %>
+            <% if !@average.nan? || @average.nil? %>
+              <%= icon('fas', 'star', class: 'star-rating') * (@average) %>
+              <% if @average.round != @average  %>
+                <%= icon('fas', 'star-half-alt', class: 'star-rating margin-half-star') %>
+              <% end %>
+              <%= icon('far', 'star', class: 'star-rating') * (5 - @average) %>
+            <% end %>
+        <% end %>
+      </div>
       <div>
         <div class="ingredient-title">Ingrédients</div>
         <div class="content-title-underline">
@@ -52,13 +64,43 @@
     <div class="content-title-underline">
     </div>
     <p><%= @recipe.description %></p>
+
+
   </div>
 
   <div>
-    <h3 >Qu'en avez vous pensé?</h3>
-    <div class="content-title-underline">
-    </div>
-  </div>
+        <h3 >Qu'en avez-vous pensé?</h3>
+        <div class="content-title-underline">
+        </div>
+        <% if @recipe.reviews.empty? %>
+          <p>Soyez le premier à donner votre avis sur cette recette</p>
+        <% else %>
+          <ul class="list-group">
+            <% @recipe.reviews.each do |review| %>
+
+              <li class="list-group-item review-box">
+                <div><%= icon('fas', 'star', class: 'star-rating') * (review.rating) %><%= icon('far', 'star', class: 'star-rating') * (5 - review.rating) %>
+                -  <%= review.content %>
+                </div>
+                <div class="review-user">
+                  <div ><%= review.user.username %></div>
+                  <%= link_to review_path(review), method: :delete, data: { confirm: "Are you sure?" } do %>
+                  <i id="black-ud-icon" class="fa fa-trash destroy_dose ml-3 "></i>
+                </div>
+
+                <% end %>
+              </li>
+            <% end %>
+
+          </ul>
+        <% end %>
+
+
+    <br>
+        <%= link_to new_recipe_review_path(@recipe) do %>
+          <span class="add-recipe"><i class="fas fa-plus mr-1"></i> Partagez avec nous votre avis sur la recette!</span>
+        <% end %>
+
   </div>
 
 </div>
