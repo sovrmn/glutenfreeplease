@@ -1,0 +1,29 @@
+<div class="bg-white p-3 my-3">
+  <h2 class="mb-3 ml-3">Mes recettes</h2>
+  <div class="cards-recipe">
+    <% @user.recipes.each do |recipe| %>
+    <div class="card-recipe">
+      <div class="card-booking-infos">
+        <div class="d-flex align-items-baseline">
+          <h3><%= recipe.name.capitalize %></h3>
+          <div class="edit-delete">
+              <%= link_to edit_recipe_path(recipe) do%>
+                <i id="black-ud-icon" class="fas fa-edit ml-3"></i>
+              <% end %>
+              <%= link_to recipe_path(recipe), method: :delete, data: { confirm: "Are you sure?" } do %>
+                <i id="black-ud-icon" class="fa fa-trash destroy_dose"></i>
+              <% end %>
+          </div>
+        </div>
+        <ul class="list-unstyled">
+          <% if recipe.description.nil? %>
+            <li><span class="pink-badge">Description</span> <%= recipe.description %></li>
+          <% else %>
+            <li><span class="pink-badge">Description</span> <%= "#{recipe.description.first(100)}..." %></li>
+          <% end  %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>

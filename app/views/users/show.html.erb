@@ -4,6 +4,10 @@
       <h1 class="my-3 p-3"><%= @user.username %></h1>
       <%= render 'users/about_user' %>
 
+      <% if @user.recipes.any? %>
+        <%= render 'users/recipes' %>
+      <% end %>
+
     </div>
   </div>
 </div>
