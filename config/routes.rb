@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :doses, only: [:new, :create, :edit]
     resources :reviews, only: [:new, :create]
   end
+  resources :users, except: [ :index, :destroy ]
   resources :ingredients
   resources :doses, only: [:destroy]
   resources :reviews, only: [:destroy]

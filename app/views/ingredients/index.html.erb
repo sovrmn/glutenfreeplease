@@ -11,10 +11,9 @@
   <ul>
     <% ingredient_list = @ingredients.sort_by {|ingredient| ingredient.name}%>
     <% ingredient_list.each do |ingredient| %>
-      <li>
-          <%= ingredient.name.capitalize %>
+      <li><%= ingredient.name.capitalize %>
           <%= link_to edit_ingredient_path(ingredient) do%>
-          <i id="black-ud-icon" class="fas fa-edit ml-5"></i>
+          <i id="black-ud-icon" class="fas fa-edit ml-3"></i>
           <% end %>
           <%= link_to ingredient_path(ingredient), method: :delete, data: { confirm: "Are you sure?" } do %>
           <i id="black-ud-icon" class="fa fa-trash destroy_dose"></i>

@@ -37,6 +37,7 @@
         <li class="nav-item dropdown">
           <%= image_tag "https://i.pinimg.com/564x/f4/e3/f3/f4e3f349769e8d7d212caaa42dda64d1.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= link_to "Mon profil", user_path(current_user), class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>

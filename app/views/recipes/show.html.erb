@@ -36,7 +36,11 @@
 
           <ul>
             <% @recipe.doses.each do |dose| %>
-              <li><%= dose.ingredient.name.capitalize %> : <%= dose.description %></li>
+              <li><%= dose.ingredient.name.capitalize %> : <%= dose.description %>
+                <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
+                <i id="show-icon"  class="fa fa-trash destroy_dose ml-3"></i>
+                <% end %>
+              </li>
             <% end %>
           </ul>
 
