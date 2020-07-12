@@ -1,9 +1,19 @@
 .review-box {
   display:flex;
+  background-color: white;
+  margin-bottom: 10px;
   justify-content: space-between;
+  padding: 20px;
 }
 
 .review-user {
   display:flex;
   justify-content: flex-end;
+  font-style: italic;
+}
+
+.review-rating-comments {
+  display:flex;
+  justify-content: flex-start;
+
 }

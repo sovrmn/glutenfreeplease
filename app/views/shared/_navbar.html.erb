@@ -21,6 +21,9 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
+        <li class="nav-item">
+          <div id="hello-username" class="nav-link">Hello <%= current_user.username%>!</div>
+        </li>
         <li id="menu-item" class="nav-item">
           <%= link_to "Accueil", root_path, class: "nav-link" %>
         </li>
@@ -30,9 +33,7 @@
         <li id="menu-item" class="nav-item">
           <%=link_to "Produits", ingredients_path, class: "nav-link" %>
         </li>
-        <li class="nav-item">
-          <div class="nav-link">Hello <%= current_user.username%>!</div>
-        </li>
+
         <li class="nav-item dropdown">
           <%= image_tag "https://i.pinimg.com/564x/f4/e3/f3/f4e3f349769e8d7d212caaa42dda64d1.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

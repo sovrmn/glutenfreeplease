@@ -33,8 +33,7 @@
       </div>
       <div>
         <div class="ingredient-title">Ingrédients</div>
-        <div class="content-title-underline">
-        </div>
+
           <ul>
             <% @recipe.doses.each do |dose| %>
               <li><%= dose.ingredient.name.capitalize %> : <%= dose.description %></li>
@@ -45,7 +44,7 @@
 
       <div>
         <%= link_to new_recipe_dose_path(@recipe) do %>
-          <div class="add-recipe"><i class="fas fa-plus"></i>Ajouter un ingrédient à la recette
+          <div class="add-recipe"><i class="fas fa-plus mr-2"></i>Ajouter un ingrédient à la recette
           </div>
         <% end %>
       </div>
@@ -61,8 +60,7 @@
 
   <div class="preparation">
     <h3>Préparation</h3>
-    <div class="content-title-underline">
-    </div>
+
     <p><%= @recipe.description %></p>
 
 
@@ -70,22 +68,21 @@
 
   <div>
         <h3 >Qu'en avez-vous pensé?</h3>
-        <div class="content-title-underline">
-        </div>
+
         <% if @recipe.reviews.empty? %>
           <p>Soyez le premier à donner votre avis sur cette recette</p>
         <% else %>
           <ul class="list-group">
             <% @recipe.reviews.each do |review| %>
 
-              <li class="list-group-item review-box">
-                <div><%= icon('fas', 'star', class: 'star-rating') * (review.rating) %><%= icon('far', 'star', class: 'star-rating') * (5 - review.rating) %>
+              <li class="review-box">
+                <div class="review-rating-comments"><%= icon('fas', 'star', class: 'star-rating') * (review.rating) %><%= icon('far', 'star', class: 'star-rating') * (5 - review.rating) %>
                 -  <%= review.content %>
                 </div>
                 <div class="review-user">
                   <div ><%= review.user.username %></div>
-                  <%= link_to review_path(review), method: :delete, data: { confirm: "Are you sure?" } do %>
-                  <i id="black-ud-icon" class="fa fa-trash destroy_dose ml-3 "></i>
+                  <div><%= link_to review_path(review), method: :delete, data: { confirm: "Are you sure?" } do %>
+                  <i id="black-ud-icon" class="fa fa-trash destroy_dose ml-3 "></i></div>
                 </div>
 
                 <% end %>
