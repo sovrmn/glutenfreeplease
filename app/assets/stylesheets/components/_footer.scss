@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 30px;
+  height: 10vh;
   padding: 30px 30px 30px 30px;
   color: rgba(0,0,0,0.3);
   position:relative;
@@ -30,4 +30,31 @@
 .content-wrapper {
   min-height: calc(100vh - 180px);
   position:relative;
+}
+
+@media (max-width: 767px){
+
+  .footer {
+    height: 11vh;
+  }
+
+  .footer-copyright {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 359px){
+
+  .footer {
+    height: 11vh;
+  }
+
+  .footer-copyright {
+    font-size: 12px;
+  }
+
+  .footer-links a {
+  font-size: 16px;
+  padding: 0px 8px;
+}
 }

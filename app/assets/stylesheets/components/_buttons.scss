@@ -1,24 +1,4 @@
-.pink-button {
-  background-color: $warm-pink;
-  color: white;
-  opacity:0.95;
-  cursor: pointer;
-  border-radius: 15px;
-  text-align:center;
-  justify-content: center;
-  transition: opacity 0.3s ease;
-  padding: 1.25rem 1.25rem;
-  border: 1px solid transparent;
-  font-size: 25px;
 
-
-  &:hover {
-    color: white;
-    background-color: $dark-warm-pink;
-    text-decoration: none;
-    opacity: 1;
-  }
-}
 
 .button-container {
   display:flex;
@@ -33,7 +13,7 @@
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
-  border-radius: 2px;
+  border-radius: 5px;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   text-align: center;
   vertical-align: middle;

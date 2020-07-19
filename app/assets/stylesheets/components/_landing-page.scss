@@ -1,25 +1,142 @@
 .home-banner {
-  height: 90vh;
+  height: 85vh;
   background-size: cover;
   background-position: center;
   color: white;
   margin: 0px;
-  padding: 80px 0;
+  padding: 20vh 0;
 }
 
-.discover-recipes {
+.discover-recipes-card {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    padding: 1rem 1rem;
+    width: fit-content;
+  }
+
+
+.discover-recipes-content {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  margin-top: 4%;
-  margin-left: 6%;
-  margin-right: 6%;
-}
-
-.home-banner h1 {
-  margin-bottom: 60px;
+  padding: 1.25em;
 }
 
 .pink-text {
   color: $warm-pink;
 }
+
+.pink-button {
+  background-color: $warm-pink;
+  color: white;
+  opacity:0.95;
+  cursor: pointer;
+  border-radius: 15px;
+  text-align:center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+  padding: 1.25rem 1.25rem;
+  border: 1px solid transparent;
+
+
+  &:hover {
+    color: white;
+    background-color: $dark-warm-pink;
+    text-decoration: none;
+    opacity: 1;
+  }
+}
+
+
+@media (min-width: 415px){
+  .home-banner {
+    height: 87vh;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    margin: 0px;
+    padding: 20vh 0;
+  }
+
+
+  .home-banner h1 {
+    font-size: 40px;
+  }
+  .discover-recipes-card {
+    margin-left: 40px;
+    margin-bottom: 60px;
+  }
+
+  .pink-button {
+    font-size: 32px;
+    margin-left: 40px;
+  }
+}
+
+
+@media (max-width: 414px) {
+  .home-banner {
+    height: 82vh;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    margin: 0px;
+    padding: 14vh 0;
+  }
+
+
+
+  .pink-button  {
+      font-size: 20px;
+      margin: auto 20px;
+
+    }
+
+  .home-banner h1 {
+      margin-bottom: 0px;
+      margin-top: 0px;
+      margin-left: 0px;
+      margin-right: 0px;
+      font-size: 32px;
+  }
+
+  .discover-recipes-card {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 50px;
+  }
+
+}
+
+@media (max-width: 359px) {
+  .home-banner {
+    height: 78vh;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    margin: 0px;
+    padding: 12vh 0;
+  }
+
+  .pink-button  {
+      font-size: 16px;
+      margin: auto 40px;
+
+    }
+
+  .home-banner h1 {
+      margin-bottom: 0px;
+      margin-top: 0px;
+      margin-left: 0px;
+      margin-right: 0px;
+      font-size: 24px;
+  }
+
+  .discover-recipes-card {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 50px;
+  }
+
+}
+
+
