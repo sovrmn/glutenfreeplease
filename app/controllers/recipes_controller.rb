@@ -17,7 +17,7 @@ class RecipesController < ApplicationController
     @recipe.user = current_user
     if @recipe.save
       redirect_to recipe_path(@recipe)
-    else exit
+    else
       render 'new'
       flash[:notice] = "The creation could not be completed."
     end

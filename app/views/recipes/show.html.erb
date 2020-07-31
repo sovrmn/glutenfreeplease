@@ -19,7 +19,7 @@
             <% end %>
         </div>
       </div>
-      <div class='mt-2'>
+      <div class='mt-2 star-recipe-information'>
         <% if @recipe.reviews.empty? %>
           <% else %>
             <% if !@average.nan? || @average.nil? %>
@@ -31,78 +31,93 @@
             <% end %>
         <% end %>
       </div>
-      <div>
-        <div class="ingredient-title">Ingrédients</div>
 
-          <ul>
-            <% @recipe.doses.each do |dose| %>
-              <li><%= dose.ingredient.name.capitalize %> : <%= dose.description %>
-                <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
-                <i id="show-icon"  class="fa fa-trash destroy_dose ml-3"></i>
-                <% end %>
-              </li>
-            <% end %>
-          </ul>
 
-      </div>
-
-      <div>
-        <%= link_to new_recipe_dose_path(@recipe) do %>
-          <div class="add-recipe"><i class="fas fa-plus mr-2"></i>Ajouter un ingrédient à la recette
-          </div>
-        <% end %>
-      </div>
-      <p></p>
 
       </div>
     </div>
   </div>
-
-<div class="container-recipe">
-    <div class="recipe-grid">
+  <div class="recipe-elements-container">
+    <div class="recipe-ingredients">
+    <div class="ingredient-title">
+      Ingrédients
     </div>
+    <div>
+        <ul>
+          <% @recipe.doses.each do |dose| %>
+            <li><%= dose.ingredient.name.capitalize %> : <%= dose.description %>
+              <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
+              <i id="show-icon"  class="fa fa-trash destroy_dose ml-3"></i>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+    </div>
+    <div>
+      <%= link_to new_recipe_dose_path(@recipe) do %>
+        <div class="add-recipe">
+          <i class="fas fa-plus mr-2"></i>
+          Ajouter un ingrédient à la recette
+        </div>
+      <% end %>
+    </div>
+    <p></p>
+
+  </div>
 
   <div class="preparation">
-    <h3>Préparation</h3>
+    <h3 class="recipe-category-title">Préparation</h3>
 
-    <p><%= @recipe.description %></p>
+    <ol class="recipe-description">
+      <% @recipe.description.split(".").each do |line| %>
+        <li class="recipe-steps">
+          <%= line %>.
+        </li>
+
+      <% end %>
+    </ol>
+
 
 
   </div>
 
-  <div>
-        <h3 >Qu'en avez-vous pensé?</h3>
+  <div class="review">
+    <h3 class="recipe-category-title">Qu'avez-vous pensé de cette recette de <%=@recipe.name %>?</h3>
 
-        <% if @recipe.reviews.empty? %>
-          <p>Soyez le premier à donner votre avis sur cette recette</p>
-        <% else %>
-          <ul class="list-group">
-            <% @recipe.reviews.each do |review| %>
+    <% if @recipe.reviews.empty? %>
+      <p>Soyez le premier à donner votre avis sur cette recette</p>
+    <% else %>
+      <ul class="list-group">
+        <% @recipe.reviews.each do |review| %>
 
-              <li class="review-box">
-                <div class="review-rating-comments"><%= icon('fas', 'star', class: 'star-rating') * (review.rating) %><%= icon('far', 'star', class: 'star-rating') * (5 - review.rating) %>
-                -  <%= review.content %>
-                </div>
-                <div class="review-user">
-                  <div ><%= review.user.username %></div>
-                  <div><%= link_to review_path(review), method: :delete, data: { confirm: "Are you sure?" } do %>
-                  <i id="black-ud-icon" class="fa fa-trash destroy_dose ml-3 "></i></div>
-                </div>
+          <li class="review-box">
+            <div class="review-rating-comments"><%= icon('fas', 'star', class: 'star-rating') * (review.rating) %><%= icon('far', 'star', class: 'star-rating') * (5 - review.rating) %>
+            -  <%= review.content %>
+            </div>
+            <div class="review-user">
+              <div ><%= review.user.username %></div>
+              <div><%= link_to review_path(review), method: :delete, data: { confirm: "Are you sure?" } do %>
+              <i id="black-ud-icon" class="fa fa-trash destroy_dose ml-3 "></i></div>
+            </div>
 
-                <% end %>
-              </li>
             <% end %>
-
-          </ul>
+          </li>
         <% end %>
 
-
-    <br>
-        <%= link_to new_recipe_review_path(@recipe) do %>
-          <span class="add-recipe"><i class="fas fa-plus mr-1"></i> Partagez avec nous votre avis sur la recette!</span>
+      </ul>
         <% end %>
+
+    <div>
+      <%= link_to new_recipe_review_path(@recipe) do %>
+        <div class="add-recipe mt-3"><i class="fas fa-plus mr-1"></i>
+          Partagez avec nous votre avis sur cette recette!
+        </div>
+      <% end %>
+    </div>
 
   </div>
 
-</div>
+
+  </div>
+
 
