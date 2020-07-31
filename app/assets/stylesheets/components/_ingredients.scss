@@ -3,10 +3,10 @@
 }
 
 .image-main {
-  height: 50vh;
-  width: 100%;
-  object-fit: cover;
-  margin: 0px;
+  background-position: center;
+  height: 55vh;
+  margin-top: 0px;
+  margin-bottom: 1em;
 }
 
 .ingredients-title {
@@ -22,7 +22,7 @@
   text-align: center;
 }
 
-.ingredients{
+.ingredients {
   color: black;
   font-size: 16px;
     &:hover {
@@ -30,4 +30,52 @@
     text-decoration: none;
     color: $warm-pink;
   }
+}
+
+@media (max-width: 1120px){
+  .image-main {
+    background-size: cover;
+    // background-position: center;
+    height: 40vh;
+    margin-top: 0px;
+    margin-bottom: 1em;
+  }
+
+}
+
+@media (max-width: 992px){
+
+  .image-main {
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    margin-top: 0px;
+    margin-bottom: 1em;
+  }
+
+}
+
+
+@media (min-width: 100px) and (max-width: 575px){
+  .image-main {
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+  margin-top: 0px;
+  margin-bottom: 1em;
+  }
+
+  .ingredients-title {
+  color: black;
+  font-size: 32px;
+  text-align: center;
+  }
+
+  .ingredients-subtitle {
+  color: black;
+  font-size: 24px;
+  font-style: italic;
+  text-align: center;
+  }
+
 }
