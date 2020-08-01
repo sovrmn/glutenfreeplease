@@ -33,3 +33,22 @@
 .pink-btn-edit a {
   color: white;
 }
+
+.small-pink-button {
+  background-color: #e86d6d;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  text-align: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid transparent;
+  font-size: 16px;
+  margin-bottom: 12px;
+  &:hover {
+    background-color: $dark-warm-pink;
+    text-decoration: none;
+    color: white;
+  }
+}
