@@ -1,5 +1,5 @@
-.signin {
-  height: 85vh;
+.signup {
+  height: 90vh;
   object-fit: cover;
   color: white;
   margin: 0px;
@@ -8,8 +8,14 @@
 
 
 .signup-form {
+  background-color:white;
   border-radius: 15px;
   padding: 0px 20px;
   margin: 25px 5px;
+}
+
+.signup h3{
+  text-align: center;
+  color: black;
 }
 
