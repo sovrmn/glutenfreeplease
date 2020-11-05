@@ -10,7 +10,7 @@
       <div class="mb-3">
         <span class="pink-badge">Email</span> <span class="text-muted"><%= @user.email %></span>
       </div>
-      <%= f.input :username %>
+      <%= f.input :username, label:"Nom utilisateur" %>
       <%= f.input :first_name, label:"Prénom" %>
       <%= f.input :last_name, label:"Nom" %>
       <%= f.button :submit, "Mettre à jour mon profil", class: 'pink-btn-edit' %>
