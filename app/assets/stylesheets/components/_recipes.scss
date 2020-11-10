@@ -14,11 +14,13 @@
 
 
 h2.index-title {
-  color: black;
   font-size: 48px;
-  padding: 24px;
+  font-weight: bold;
+  padding: 32px;
   text-align: center;
   margin-bottom: 0!important;
+  color: $warm-pink;
+  margin-top: 16px;
 }
 
 .card-category {
@@ -42,6 +44,7 @@ h2.index-title {
 }
 
 .card {
+  position:relative;
   background-size: cover;
   background-position: center;
   height: 260px;
@@ -54,8 +57,20 @@ h2.index-title {
       opacity:1;
       box-shadow: 0 0 5px rgba(0,0,0,0.3);
   }
-
 }
+
+.diet-icon-container {
+  display:flex;
+  position:absolute;
+  bottom: 8px;
+  left: 24px;
+  margin-bottom: 10px;
+}
+
+.diet-icon-index {
+  margin-right: 10px;
+  }
+
 
 .round-card {
   background-size: cover;
@@ -116,8 +131,8 @@ h2.index-title {
     height: 45vh;
     margin-top: 0px;
     margin-bottom: 1em;
+    margin-top: 16px;
   }
-
 }
 
 @media (max-width: 992px){
@@ -134,11 +149,13 @@ h2.index-title {
   }
 
   h2.index-title {
-    color: black;
+    color: $warm-pink;
     font-size: 40px;
+    font-weight: bold;
     padding: 24px;
     text-align: center;
     margin-bottom: 0!important;
+    margin-top: 16px;
   }
 }
 
@@ -155,11 +172,14 @@ h2.index-title {
       grid-template-columns: 1fr;
     }
   h2.index-title {
-    color: black;
+    color: $warm-pink;
     font-size: 32px;
+    font-weight: bold;
     padding: 24px;
     text-align: center;
     margin-bottom: 0!important;
+    margin-top: 16px;
+
   }
 
 }

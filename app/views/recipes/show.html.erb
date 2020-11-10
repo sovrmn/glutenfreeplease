@@ -19,7 +19,7 @@
             <% end %>
         </div>
       </div>
-      <div class='mt-2 star-recipe-information'>
+      <div class='star-recipe-information'>
         <% if @recipe.reviews.empty? %>
           <% else %>
             <% if !@average.nan? || @average.nil? %>
@@ -29,6 +29,20 @@
               <% end %>
               <%= icon('far', 'star', class: 'star-rating') * (5 - @average) %>
             <% end %>
+        <% end %>
+      </div>
+      <div class='diet-recipe-information'>
+        <% if @recipe.dairyfree %>
+          <%= image_tag("dairyfree.png", :class => "mr-3 diet-recipe-information")%>
+          <% else %>
+        <% end %>
+        <% if @recipe.eggfree %>
+          <%= image_tag("eggfree.png", :class => "mr-3 diet-recipe-information")%>
+          <% else %>
+        <% end %>
+        <% if @recipe.vegan %>
+          <%= image_tag("vegan.png", :class => "mr-3 diet-recipe-information")%>
+          <% else %>
         <% end %>
       </div>
 
@@ -116,7 +130,6 @@
     </div>
 
   </div>
-
 
   </div>
 

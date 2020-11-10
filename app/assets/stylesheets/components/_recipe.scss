@@ -84,6 +84,19 @@ a:hover{
     margin-top: 10px;
   }
 
+  .star-recipe-information {
+  font-size: 16px;
+  margin-top: 10px;
+  }
+
+
+  .diet-recipe-information {
+    display: flex;
+    margin-top: 8px;
+    margin-right: 5px;
+    width: 32px;
+  }
+
   .recipe-title-container {
     display: flex;
     justify-content: space-between;
@@ -151,6 +164,13 @@ a:hover{
   margin-top: 5px;
   }
 
+  .diet-recipe-information {
+    display: flex;
+    margin-top: 10px;
+    margin-right: 5px;
+    width: 32px;
+  }
+
   .recipe-title-container {
     display: flex;
     justify-content: space-between;
@@ -213,9 +233,17 @@ a:hover{
   }
 
   .star-recipe-information {
-  font-size: 16px;
-  margin-top: 5px;
+    font-size: 16px;
+    margin-top: 5px;
   }
+
+  .diet-recipe-information {
+    display: flex;
+    margin-top: 8px;
+    margin-right: 4px;
+    width: 16px;
+  }
+
 
   .recipe-title-container {
     display: flex;
@@ -224,8 +252,8 @@ a:hover{
   }
 
   .ingredient-title {
-  font-size: 24px;
-  margin-bottom: 6px;
+    font-size: 24px;
+    margin-bottom: 6px;
   }
 
   .recipe-category-title {

@@ -6,6 +6,9 @@
       <%= simple_form_for @recipe do |f| %>
         <%= f.input :name %>
         <%= f.input :description %>
+        <%= f.input :dairyfree, :as => :boolean, input_html: {checked: false} %>
+        <%= f.input :eggfree, :as => :boolean, input_html: {checked: false} %>
+        <%= f.input :vegan, :as => :boolean, input_html: {checked: false} %>
         <%= f.input :photo, as: :file %>
         <div class="button-container">
           <%= f.button :submit, class: 'pink-button' %>

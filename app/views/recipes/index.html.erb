@@ -17,7 +17,39 @@
           <div class="card-title">
             <%=recipe.name.capitalize%>
           </div>
-        </div>
+
+          <div class="card-stars">
+            <div class=''>
+              <% if recipe.reviews.empty? %>
+                <% else %>
+                  <% if !@average.nil? %>
+                    <%= icon('fas', 'star', class: 'star-rating') * (@average) %>
+                    <% if @average.round != @average  %>
+                      <%= icon('fas', 'star-half-alt', class: 'star-rating margin-half-star') %>
+                    <% end %>
+                    <%= icon('far', 'star', class: 'star-rating') * (5 - @average) %>
+                  <% end %>
+              <% end %>
+            </div>
+
+          </div>
+
+          <div class="diet-icon-container">
+            <% if recipe.dairyfree %>
+              <%= image_tag("dairyfree.png", :class => " diet-icon-index")%>
+            <% else %>
+            <% end %>
+            <% if recipe.eggfree %>
+              <%= image_tag("eggfree.png", :class => " diet-icon-index")%>
+            <% else %>
+            <% end %>
+            <% if recipe.vegan %>
+              <%= image_tag("vegan.png", :class => " diet-icon-index")%>
+            <% else %>
+            <% end %>
+          </div>
+
+          </div>
       <% end %>
     <% end %>
 
@@ -25,6 +57,7 @@
       <%= link_to new_recipe_path do %>
         <div class="round-card" style="background-image:linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(https://i.pinimg.com/474x/80/46/1a/80461a2037fae3da6c425c821c4eec3e.jpg);">
           <div class="card-title-add">+ votre recette</div>
+
         </div>
       <% end %>
     </div>
