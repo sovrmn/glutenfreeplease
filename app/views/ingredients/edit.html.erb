@@ -3,10 +3,10 @@
     <div class="col-md-8">
       <h1 class="my-4">Créez un nouvel ingrédient</h1>
       <%= simple_form_for @ingredient do |f| %>
-        <%= f.input :name %>
+        <%= f.input :name, label: "Nom de l'ingrédient"  %>
         <%= f.input :description %>
         <div class="button-container">
-          <%= f.button :submit, class: 'pink-button' %>
+          <%= f.button :submit,"Modifiez l'ingrédient", class: 'pink-button' %>
         </div>
       <% end %>
     </div>

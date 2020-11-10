@@ -4,14 +4,14 @@
       <h1 class="my-4">Modifiez votre recette</h1>
 
       <%= simple_form_for @recipe do |f| %>
-        <%= f.input :name %>
-        <%= f.input :description %>
-        <%= f.input :dairyfree, :as => :boolean, input_html: {checked: false} %>
-        <%= f.input :eggfree, :as => :boolean, input_html: {checked: false} %>
-        <%= f.input :vegan, :as => :boolean, input_html: {checked: false} %>
+        <%= f.input :name, label: 'Nom de la recette' %>
+        <%= f.input :description, label: 'Description de la préparation' %>
+        <%= f.input :dairyfree, :as => :boolean, input_html: {checked: false}, label: "Sans laitage d'origine animale" %>
+        <%= f.input :eggfree, :as => :boolean, input_html: {checked: false}, label: "Sans oeufs" %>
+        <%= f.input :vegan, :as => :boolean, input_html: {checked: false}, label: "Vegan" %>
         <%= f.input :photo, as: :file %>
         <div class="button-container">
-          <%= f.button :submit, class: 'pink-button' %>
+          <%= f.button :submit,'Modifiez votre recette', class: 'pink-button' %>
         </div>
 
       <% end %>

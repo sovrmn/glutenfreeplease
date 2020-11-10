@@ -4,10 +4,10 @@
       <h1 class="my-4">Ajoutez un ingrédient à votre recette</h1>
 
       <%= simple_form_for [@recipe, @dose] do |f| %>
-        <%= f.input :description %>
-        <%= f.association :ingredient %>
+        <%= f.input :description, label: 'Dose' %>
+        <%= f.association :ingredient, label: 'Ingrédient' %>
         <div class="button-container">
-          <%= f.button :submit, class: 'pink-button' %>
+          <%= f.button :submit, 'Ajouter', class: 'pink-button' %>
         </div>
       <% end %>
     </div>
