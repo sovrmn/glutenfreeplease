@@ -10,7 +10,9 @@
 }
 
 .ingredients-title {
-  color: black;
+  color: $warm-pink;
+  font-family: "Nunito", "Helvetica", "sans-serif";
+  font-weight: bold;
   font-size: 40px;
   text-align: center;
   line-height: 1.2;
@@ -32,6 +34,10 @@
     text-decoration: none;
     color: $warm-pink;
   }
+}
+
+li {
+  font-family: "Nunito", "Helvetica", "sans-serif";
 }
 
 @media (max-width: 1120px){
@@ -68,7 +74,9 @@
   }
 
   .ingredients-title {
-  color: black;
+  color: $warm-pink;
+  font-family: "Nunito", "Helvetica", "sans-serif";
+  font-weight: bold;
   font-size: 32px;
   text-align: center;
   line-height: 1.2;
@@ -77,6 +85,7 @@
 
   .ingredients-subtitle {
   color: black;
+  font-family: "Nunito", "Helvetica", "sans-serif";
   font-size: 24px;
   font-style: italic;
   text-align: center;

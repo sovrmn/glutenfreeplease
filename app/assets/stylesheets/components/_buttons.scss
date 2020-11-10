@@ -21,6 +21,7 @@
   font-weight: 400;
   user-select: none;
   color: white;
+  font-family: "Nunito", "Helvetica", "sans-serif";
 
   &:hover {
     background-color: $dark-warm-pink;
@@ -46,6 +47,7 @@
   border: 1px solid transparent;
   font-size: 16px;
   margin-bottom: 12px;
+  font-family: "Nunito", "Helvetica", "sans-serif";
   &:hover {
     background-color: $dark-warm-pink;
     text-decoration: none;
