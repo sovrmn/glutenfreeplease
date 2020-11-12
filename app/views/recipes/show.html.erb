@@ -10,19 +10,26 @@
       <div class="recipe-title-container">
         <div class="recipe-title"><%= @recipe.name.capitalize %>
         </div>
-        <div class="edit-delete">
-            <%= link_to edit_recipe_path(@recipe) do%>
-              <i id="show-icon" class="fas fa-edit"></i>
+
+
+          <div class="edit-delete">
+            <% if policy(@recipe).edit? %>
+              <%= link_to edit_recipe_path(@recipe) do%>
+                <i id="show-icon" class="fas fa-edit"></i>
+              <% end %>
             <% end %>
-            <%= link_to recipe_path(@recipe), method: :delete, data: { confirm: "Are you sure?" } do %>
-              <i id="show-icon" class="fa fa-trash destroy_dose"></i>
+            <% if policy(@recipe).destroy? %>
+              <%= link_to recipe_path(@recipe), method: :delete, data: { confirm: "Are you sure?" } do %>
+                <i id="show-icon" class="fa fa-trash destroy_dose"></i>
+              <% end %>
             <% end %>
-        </div>
+          </div>
+
       </div>
       <div class='star-recipe-information'>
         <% if @recipe.reviews.empty? %>
           <% else %>
-            <% if !@average.nan? || @average.nil? %>
+            <% if !@average.nil? %>
               <%= icon('fas', 'star', class: 'star-rating') * (@average) %>
               <% if @average.round != @average  %>
                 <%= icon('fas', 'star-half-alt', class: 'star-rating margin-half-star') %>
@@ -60,19 +67,23 @@
         <ul>
           <% @recipe.doses.each do |dose| %>
             <li><%= dose.ingredient.name.capitalize %> : <%= dose.description %>
-              <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
-              <i id="show-icon"  class="fa fa-trash destroy_dose ml-3"></i>
+              <% if policy(dose).destroy? %>
+                <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
+                <i id="show-icon"  class="fa fa-trash destroy_dose ml-3"></i>
               <% end %>
+            <% end %>
             </li>
           <% end %>
         </ul>
     </div>
     <div>
-      <%= link_to new_recipe_dose_path(@recipe) do %>
-        <div class="add-recipe">
-          <i class="fas fa-plus mr-2"></i>
-          Ajouter un ingrédient à la recette
-        </div>
+      <% if @recipe.user == current_user %>
+        <%= link_to new_recipe_dose_path(@recipe) do %>
+          <div class="add-recipe">
+            <i class="fas fa-plus mr-2"></i>
+            Ajouter un ingrédient à la recette
+          </div>
+        <% end %>
       <% end %>
     </div>
     <p></p>
@@ -110,8 +121,10 @@
             </div>
             <div class="review-user">
               <div ><%= review.user.username %></div>
-              <div><%= link_to review_path(review), method: :delete, data: { confirm: "Are you sure?" } do %>
-              <i id="black-ud-icon" class="fa fa-trash destroy_dose ml-3 "></i></div>
+              <% if policy(review).destroy? %>
+                <div><%= link_to review_path(review), method: :delete, data: { confirm: "Are you sure?" } do %>
+                <i id="black-ud-icon" class="fa fa-trash destroy_dose ml-3 "></i></div>
+              <% end %>
             </div>
 
             <% end %>

@@ -12,12 +12,16 @@
     <% ingredient_list = @ingredients.sort_by {|ingredient| ingredient.name}%>
     <% ingredient_list.each do |ingredient| %>
       <li><%= ingredient.name.capitalize %>
+        <% if policy(ingredient).edit? %>
           <%= link_to edit_ingredient_path(ingredient) do%>
-          <i id="black-ud-icon" class="fas fa-edit ml-3"></i>
+            <i id="black-ud-icon" class="fas fa-edit ml-3"></i>
           <% end %>
+        <% end %>
+        <% if policy(ingredient).destroy? %>
           <%= link_to ingredient_path(ingredient), method: :delete, data: { confirm: "Are you sure?" } do %>
           <i id="black-ud-icon" class="fa fa-trash destroy_dose"></i>
           <% end %>
+        <% end %>
       </li>
     <% end %>
   </ul>

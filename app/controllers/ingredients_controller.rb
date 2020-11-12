@@ -1,7 +1,7 @@
 class IngredientsController < ApplicationController
 
   def index
-    @ingredients = Ingredient.all
+    @ingredients = policy_scope(Ingredient)
   end
 
   def show
@@ -10,12 +10,15 @@ class IngredientsController < ApplicationController
 
   def new
     @ingredient = Ingredient.new
+    authorize @ingredient
   end
 
   def create
     @ingredient = Ingredient.new(ingredient_params.merge(user:current_user))
+    authorize @ingredient
     if @ingredient.save
       redirect_to ingredients_path
+      flash[:notice] = "Ingredient was successfully created."
     else
       render 'new'
       flash[:notice] = "The creation could not be completed."
@@ -24,12 +27,14 @@ class IngredientsController < ApplicationController
 
   def edit
     @ingredient = Ingredient.find(params[:id])
+    authorize @ingredient
   end
 
   def update
     @ingredient = Ingredient.find(params[:id])
     @ingredient.user = current_user
     @ingredient.update(ingredient_params)
+    authorize @ingredient
     if @ingredient.save
       redirect_to ingredients_path
     else
@@ -42,8 +47,10 @@ class IngredientsController < ApplicationController
   def destroy
     @ingredient = Ingredient.find(params[:id])
     @ingredient.destroy
+    authorize @ingredient
 
     redirect_to ingredients_path
+    flash[:notice] = "Ingredient was successfully deleted."
   end
 
   private
