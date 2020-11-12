@@ -9,7 +9,6 @@
 .title-grid {
   display: grid;
   grid-template-columns: repeat(1fr);
-  grid-gap: 20px;
 }
 
 
@@ -45,7 +44,6 @@ h2.index-title {
 
 .card {
   position:relative;
-  margin-top: 85px;
   background-size: cover;
   background-position: center;
   height: 260px;

@@ -55,25 +55,4 @@
   }
 }
 
-.small-pink-button {
-  background-color: #e86d6d;
-  color: white;
-  cursor: pointer;
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
-  text-align: center;
-  justify-content: center;
-  transition: opacity 0.3s ease;
-  padding: 0.4rem 0.75rem;
-  border: 1px solid transparent;
-  font-size: 16px;
-  margin-bottom: 12px;
-  font-family: "Nunito", "Helvetica", "sans-serif";
-  &:hover {
-    background-color: $dark-warm-pink;
-    text-decoration: none;
-    color: white;
-  }
-}
+

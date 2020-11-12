@@ -3,37 +3,26 @@
 
 <div class="title-grid">
   <h2 class="index-title">Découvrez nos recettes sans gluten</h2>
-  <div class="container-fluid">
- <!--    <div class="row"> -->
-      <div class="searchbar-container"></div>
-        <div id="index-search">
-          <div id="cover">
-             <%= form_with url: recipes_path, method: "GET", local: true do |f| %>
-                <form>
-                  <div class="tb">
-                      <%= text_field_tag :query,params[:query],class: "form-control",
-            placeholder: "Je cherche..." %>
-                  </div>
-                  <div id="s-cover">
-                    <%= f.submit "", class: "td" %>
-                  <button type="submit">
-                    <div id="s-circle"></div>
-                    <span></span>
-                  </button>
-                  </div>
-                </form>
-              <% end %>
-          </div>
+  <!-- searchbar-->
+  <div>
+    <% if current_page?('/') %>
+    <% else %>
+    <div class="form-group index-searchbar">
+        <div>
+          <%= form_tag recipes_path, method: :get do %>
+          <%= text_field_tag :query,params[:query],class: "form-control form-frame",
+            placeholder: "Je cherche..."%>
         </div>
+        <div>
+          <%= submit_tag "➔", class: "small-pink-button-searchbar" %>
+        </div>
+        <% end %>
+    </div>
 
-<!--     </div> -->
+  <% end %>
   </div>
+
 </div>
-
-
-
-
-
 
 <div class="container-recipe">
   <div class="cards-grid">
