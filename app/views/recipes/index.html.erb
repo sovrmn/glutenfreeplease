@@ -3,7 +3,37 @@
 
 <div class="title-grid">
   <h2 class="index-title">Découvrez nos recettes sans gluten</h2>
+  <div class="container-fluid">
+ <!--    <div class="row"> -->
+      <div class="searchbar-container"></div>
+        <div id="index-search">
+          <div id="cover">
+             <%= form_with url: recipes_path, method: "GET", local: true do |f| %>
+                <form>
+                  <div class="tb">
+                      <%= text_field_tag :query,params[:query],class: "form-control",
+            placeholder: "Je cherche..." %>
+                  </div>
+                  <div id="s-cover">
+                    <%= f.submit "", class: "td" %>
+                  <button type="submit">
+                    <div id="s-circle"></div>
+                    <span></span>
+                  </button>
+                  </div>
+                </form>
+              <% end %>
+          </div>
+        </div>
+
+<!--     </div> -->
+  </div>
 </div>
+
+
+
+
+
 
 <div class="container-recipe">
   <div class="cards-grid">

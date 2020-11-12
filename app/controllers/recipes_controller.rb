@@ -1,6 +1,14 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = policy_scope(Recipe)
+    if params[:query].present?
+      sql_query = " \
+        recipes.name ILIKE :query \
+        OR recipes.description ILIKE :query \
+      "
+      @recipes = policy_scope(Recipe).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @recipes = policy_scope(Recipe)
+    end
   end
 
   def show
