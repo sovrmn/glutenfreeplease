@@ -17,7 +17,7 @@ User.destroy_all
 p "users destroyed"
 puts "...database under creation"
 
-user_1 = User.create(email: "georgecoffeelover@gmail.com", username:"Georgie",  password:"Nespresso007")
+user_1 = User.create(email: "georgecoffeelover@gmail.com", username:"Georgie", password:"Nespresso007", admin: true)
 
 riz = Ingredient.create(name: "farine de riz")
 chataigne = Ingredient.create(name: "farine de châtaigne")
