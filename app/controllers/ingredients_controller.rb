@@ -1,7 +1,7 @@
 class IngredientsController < ApplicationController
 
   def index
-    @ingredients = policy_scope(Ingredient)
+    @ingredients = policy_scope(Ingredient).order(name: :asc)
   end
 
   def show

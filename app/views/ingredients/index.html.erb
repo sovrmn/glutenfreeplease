@@ -9,8 +9,7 @@
 
 <div class="container-recipe">
   <ul>
-    <% ingredient_list = @ingredients.sort_by {|ingredient| ingredient.name}%>
-    <% ingredient_list.each do |ingredient| %>
+    <% @ingredients.each do |ingredient| %>
       <li><%= ingredient.name.capitalize %>
         <% if policy(ingredient).edit? %>
           <%= link_to edit_ingredient_path(ingredient) do%>
