@@ -107,7 +107,7 @@
   </div>
 
   <div class="review">
-    <h3 class="recipe-category-title">Qu'avez-vous pensé de cette recette de <%=@recipe.name %>?</h3>
+    <h3 class="recipe-category-title">Qu'avez-vous pensé de cette recette de <%=@recipe.name.downcase %>?</h3>
 
     <% if @recipe.reviews.empty? %>
       <p>Soyez le premier à donner votre avis sur cette recette</p>
