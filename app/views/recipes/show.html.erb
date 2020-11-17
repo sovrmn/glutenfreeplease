@@ -28,14 +28,14 @@
       </div>
       <div class='star-recipe-information'>
         <% if @recipe.reviews.empty? %>
-          <% else %>
-            <% if !@average.nil? %>
-              <%= icon('fas', 'star', class: 'star-rating') * (@average) %>
-              <% if @average.round != @average  %>
-                <%= icon('fas', 'star-half-alt', class: 'star-rating margin-half-star') %>
-              <% end %>
-              <%= icon('far', 'star', class: 'star-rating') * (5 - @average) %>
+        <% else %>
+          <% if !@average.nil? %>
+            <%= icon('fas', 'star', class: 'star-rating') * (@average) %>
+            <% if @average.round != @average  %>
+              <%= icon('fas', 'star-half-alt', class: 'star-rating margin-half-star') %>
             <% end %>
+            <%= icon('far', 'star', class: 'star-rating') * (5 - @average) %>
+          <% end %>
         <% end %>
       </div>
       <div class='diet-recipe-information'>
