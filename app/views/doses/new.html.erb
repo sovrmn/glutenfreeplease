@@ -5,7 +5,7 @@
 
       <%= simple_form_for [@recipe, @dose] do |f| %>
         <%= f.input :description, label: 'Dose' %>
-        <%= f.association :ingredient, label: 'Ingrédient' %>
+        <%= f.association :ingredient, collection: Ingredient.order('name ASC'), label: 'Ingrédient' %>
         <div class="button-container">
           <%= f.button :submit, 'Ajouter', class: 'pink-button' %>
         </div>
