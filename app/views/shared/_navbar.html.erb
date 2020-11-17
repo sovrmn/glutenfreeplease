@@ -21,11 +21,7 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item">
-          <% if current_user.username.empty? %>
-            <div id="hello-username" class="nav-link">Hello <%=['Sunshine','Gorgeous','Beautiful', 'Handsome'].sample%>!</div>
-          <% else %>
             <div id="hello-username" class="nav-link">Hello <%= current_user.username%>!</div>
-          <% end %>
         </li>
         <li id="menu-item" class="nav-item">
           <%= link_to "Accueil", root_path, class: "nav-link" %>
