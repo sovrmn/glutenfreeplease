@@ -1,0 +1,236 @@
+
+body
+  overflow-x: hidden
+
+.bg
+  position: relative
+  margin: auto
+  width: 100%
+  text-align: center
+  height: 700px
+
+.see
+  display: none
+
+.bg-img
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat
+  position: relative
+
+p
+  position: relative
+  margin: auto
+  width: 100%
+  line-height: 1em
+
+.reload
+  z-index: 999
+  position: fixed
+  padding: 10px
+  margin: 15px
+  background-color: #1D1F20
+  color: #fff
+  @include transition
+  box-shadow: 1px 1px 5px #000
+
+  &:hover
+    cursor: pointer
+    background-color: lighten(#1D1F20,10%)
+
+.refresh
+  position: relative
+  margin: 0 5px
+
+// 404 sample-1
+.bg-1
+  background-color: #9C7155
+
+.bg-img1
+  @extend .bg-img
+  background-image: url("http://superawesomevectors.com/wp-content/uploads/2016/02/flat-milk-carton-vector-illustration-800x566.jpg")
+  height: 500px
+  top: 100px
+  border-radius: 50% 50% 0%
+  width: 500px
+  margin: auto
+
+.front
+  position: relative
+  margin: auto
+  @include transform(rotateY(70deg) rotateZ(5.5deg))
+  left: -65px
+  width: 500px
+  top: 210px
+
+  p
+    font-family: 'Baloo Bhaina', cursive
+    color: #55999C
+
+  .main-text
+    font-size: 150px
+    text-shadow: 5px 1px 5px #fff
+
+  .second-text
+    font-size: 30px
+    color: #fff
+
+.side
+  @extend .front
+  @include transform(rotateY(-70deg) rotateZ(-8.5deg))
+  left: 72px
+  top: 30px
+
+// 404 sample-2
+
+.bg-2
+  background-color: #7FB2F0
+
+  .bg-img
+    background-image: url("http://www.clipartkid.com/images/448/blank-road-sign-clip-art-uCXeOC-clipart.png")
+    background-size: 85%
+    width: 800px
+    margin: auto
+    top: 25px
+    position: relative
+    height: 500px
+
+  &:before
+    content: ""
+    position: absolute
+    top: 420px
+    left: 47%
+    width: 40px
+    height: 270px
+    background-color: silver
+    margin: auto
+    border-right: 40px solid darken(silver,5%)
+
+.main-text1
+  @extend .main-text
+  font-family: 'Finger Paint', cursive
+  color: #000
+  text-shadow: none
+  font-size: 250px
+  padding-top: 30px
+
+.second-text1
+  @extend .main-text1
+  font-size: 27px
+  letter-spacing: 1px
+  left: 0
+  padding-top: 15px
+
+.third-text
+  @extend .second-text1
+
+  button
+    background-color: #FFCC00
+    @extend .third-text
+    border: 1px solid #000
+    padding: 15px
+    border-radius: 5px
+    @include transition
+
+    &:hover
+      cursor: pointer
+      background-color: #000
+      color: #FFCC00
+
+
+.bg-3
+  @extend .bg-img
+  background-image: url("http://www.hipsthetic.com/wp-content/uploads/2016/04/Desert-Night-Desktop-Wallpaper.png")
+
+  p
+    font-family: 'Lobster', cursive
+    color: #94D9CB
+    top: 50%
+
+// 404 Sample 4
+
+.bg-img4
+  @extend .bg-img
+  float: right
+  width: 50%
+  height: 100%
+  background-image: url("http://bbsimg.ngfiles.com/1/25280000/ngbbs545547f341b6a.png")
+  background-size: 300px
+  background-color: #4DADD6
+.text
+  position: relative
+  float: left
+  width: 50%
+  height: 100%
+  background-color: #08638A
+
+  p, button
+    font-family: 'Amatic SC', cursive
+    color: #fff
+    top: 50px
+
+  button
+    position: relative
+    @extend .third-text
+    background-color: #08638A
+    border: 1px solid #D71736
+    border-radius: 2px
+    margin: 15px 0
+    padding: 15px
+    @include transition
+
+    &:hover
+      cursor: pointer
+      color: #fff
+      background-color: #D71736
+
+// 404 Sample 5
+
+.bg-5
+  background-color: #15314B
+.bg-img5
+  position: relative
+  width: 100%
+  height: 700px
+  background-image: url("http://kit8.net/images/thumbnails/700/525/detailed/1/Astronaut_2.png?t=1455218358")
+  background-size: 90%
+  background-position: 0 100%
+  background-repeat: no-repeat
+  position: relative
+  // top: 200px
+
+  p, button
+    font-family: 'Yatra One', cursive
+    color: #fff
+    left: 320px
+    width: 350px
+    top: 300px
+
+  .main-text
+    font-size: 150px
+    text-shadow: 1px 2px 2px #000
+
+  .second-text1
+    font-size: 30px
+
+  button
+    position: relative
+    border: 1px solid #DC2F35
+    border-radius: 100%
+    width: 100px
+    height: 100px
+    background-color: #CF2C32
+    font-size: 20px
+    box-shadow: 2px 5px #8F1E23
+    margin: 15px
+    @include transition
+    outline: 0
+
+    &:hover
+      background-color: #E63F25
+      cursor: pointer
+
+    &:active
+      margin-top: 20px
+      background-color: #DC2F35
+      box-shadow: 2px 1px #8F1E23
